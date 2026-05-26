@@ -1,10 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
-// ──────────────────────────────────────────────
-// 🔑  Replace these with your own Supabase credentials
-//     (found in: Supabase Dashboard → Settings → API)
-// ──────────────────────────────────────────────
-const SUPABASE_URL = "https://lvgipqnmrtogbrwmobkg.supabase.co";
-const SUPABASE_PUBLIC_KEY = "sb_publishable_eS0gBrQbEzkqyxHnDUMEEA_yVhGtrRY";
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLIC_KEY);
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
